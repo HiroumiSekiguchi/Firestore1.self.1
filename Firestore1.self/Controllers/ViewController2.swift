@@ -60,13 +60,13 @@ class ViewController2: UIViewController, UITextViewDelegate {
     @IBAction func postButtonTapped(_ sender: Any) {
         // titleの未記入を防ぎ、以下のtitle指定で「!」を使う
         guard let title = textField.text else { return }
-        Firestore.firestore().collection("posts").addDocument(data: [
+        Firestore.firestore().collection(POSTS).addDocument(data: [
             // ここに保存したいデータを記述
-            "title" : title,
-            "content" : textView.text!,
-            "category" : selectedCategory,
-            "numLikes" : 0,
-            "timestamp" : FieldValue.serverTimestamp()
+            TITLE : title,
+            CONTENT : textView.text!,
+            CATEGORY : selectedCategory,
+            NUM_LIKES : 0,
+            TIMESTAMP : FieldValue.serverTimestamp()
         ]) { (error) in
             if let err = error {
                 debugPrint("エラーが発生しました：\(err)")
