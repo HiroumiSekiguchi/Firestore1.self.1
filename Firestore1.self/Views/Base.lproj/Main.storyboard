@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--FS1.self-->
+        <!--Firestore1.self-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController1" customModule="Firestore1_self" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,10 +20,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="FS1.self" id="yS7-8N-cLd"/>
-                    <connections>
-                        <segue destination="XjY-dT-t3e" kind="show" id="XXw-RS-ih4"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Firestore1.self" id="yS7-8N-cLd">
+                        <barButtonItem key="rightBarButtonItem" image="plusicon1" id="osJ-Q8-HTf">
+                            <connections>
+                                <segue destination="XjY-dT-t3e" kind="show" id="GZk-je-qOl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,9 +51,12 @@
                                     <segment title="Serious"/>
                                     <segment title="Crazy"/>
                                 </segments>
-                                <color key="tintColor" red="1" green="0.36019965840000001" blue="0.2124514056" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.57546795689999997" green="0.4996456105" blue="0.19595180279999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="XjY-dT-t3e" eventType="valueChanged" id="U8D-9o-jlJ"/>
+                                </connections>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mfd-mh-YD4">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトルを追加" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mfd-mh-YD4">
                                 <rect key="frame" x="54" y="168" width="275" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -58,16 +64,16 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mew-Eo-SiN">
-                                <rect key="frame" x="41" y="219" width="300" height="259"/>
+                                <rect key="frame" x="41" y="219" width="300" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.66537350171232879" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgp-K9-N98">
-                                <rect key="frame" x="122" y="511" width="131" height="53"/>
+                                <rect key="frame" x="126" y="343" width="131" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.36019965840000001" blue="0.2124514056" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.57546795689999997" green="0.4996456105" blue="0.19595180279999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="30"/>
                                 <state key="normal" title="投稿">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,12 +110,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OSP-bu-71e">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.57546795685431462" green="0.49964561045075884" blue="0.19595180280257041" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="0.36019965840000001" blue="0.2124514056" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.96078431369999995" green="0.50980392159999999" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -122,4 +126,7 @@
             <point key="canvasLocation" x="228" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plusicon1" width="30" height="30"/>
+    </resources>
 </document>
