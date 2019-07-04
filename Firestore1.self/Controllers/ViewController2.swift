@@ -19,7 +19,7 @@ class ViewController2: UIViewController, UITextViewDelegate {
     @IBOutlet weak var postButton: UIButton!
     
     // カテゴリー用の変数
-    var selectedCategory = "funny"
+    var selectedCategory = PostCategory.funny.rawValue
     
     
 
@@ -47,11 +47,11 @@ class ViewController2: UIViewController, UITextViewDelegate {
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            selectedCategory = "funny"
+            selectedCategory = PostCategory.funny.rawValue
         case 1:
-            selectedCategory = "serious"
+            selectedCategory = PostCategory.serious.rawValue
         default:
-            selectedCategory = "crazy"
+            selectedCategory = PostCategory.crazy.rawValue
         }
     }
     

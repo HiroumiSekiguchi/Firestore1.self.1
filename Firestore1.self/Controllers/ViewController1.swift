@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum PostCategory: String {
+    case funny = "funny"
+    case serious = "serious"
+    case crazy = "crazy"
+    case popular = "popular"
+}
+
 class ViewController1: UIViewController {
 
     override func viewDidLoad() {
