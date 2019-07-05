@@ -22,12 +22,18 @@ class ViewController1: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     // UI部品の宣言
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl! // segmentedControlはOutletのUI部品として定義する必要がある！
+    
     
     // 投稿を格納する配列
     var postArray = [Post]()
     
     // Firebaseの参照元を指定するための初期変数を宣言
     var postsCollectionRef: CollectionReference!
+    var postsListner: ListenerRegistration!
+    
+    // カテゴリによるソーティング
+    var selectedCategory = PostCategory.funny.rawValue
     
     
     override func viewDidLoad() {
@@ -42,12 +48,30 @@ class ViewController1: UIViewController, UITableViewDelegate, UITableViewDataSou
         
     }
     
+    // segmentedControlの値によってcategoryの値を切り替える
+    @IBAction func categoryChanged(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            selectedCategory = PostCategory.funny.rawValue
+        case 1:
+            selectedCategory = PostCategory.serious.rawValue
+        case 2:
+            selectedCategory = PostCategory.serious.rawValue
+        default:
+            selectedCategory = PostCategory.popular.rawValue
+        }
+    }
+    
     
     // ☆☆☆viewWillAppear内でFirebaseからデータを取得☆☆☆ //
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        postsCollectionRef.getDocuments { (snapshot, error) in
+        setListner()
+    }
+    
+    // イベントリスナーを宣言
+    func setListner() {
+        postsListner = postsCollectionRef.addSnapshotListener({ (snapshot, error) in
             if let err = error {
                 debugPrint("エラー：\(err)")
             } else {
@@ -69,21 +93,11 @@ class ViewController1: UIViewController, UITableViewDelegate, UITableViewDataSou
                     
                     // 上記を配列に追加
                     self.postArray.append(newPost)
-                    
                 }
-                // 配列のカウントができているか
-//                print(self.postArray.count)
-                
-                // ここでtableViewをリロードするのを忘れないように！
                 self.tableView.reloadData()
             }
-        }
-        
-        
+        })
     }
-    
-    
-    
     
     
     // ☆☆☆以下、tableViewに関する設定☆☆☆ //

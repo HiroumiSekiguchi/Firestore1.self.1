@@ -35,7 +35,7 @@ class CellController: UITableViewCell {
         formatter.dateFormat = "MMM, dd, hh:mm"
         let timestampy = formatter.string(from: posty.timestamp)
         timestampLabel.text = timestampy
-        print(timestampy)
+//        print(timestampy)
     }
     
     
