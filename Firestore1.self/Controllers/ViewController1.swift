@@ -56,10 +56,15 @@ class ViewController1: UIViewController, UITableViewDelegate, UITableViewDataSou
         case 1:
             selectedCategory = PostCategory.serious.rawValue
         case 2:
-            selectedCategory = PostCategory.serious.rawValue
+            selectedCategory = PostCategory.crazy.rawValue
         default:
             selectedCategory = PostCategory.popular.rawValue
         }
+        
+        // 一回リスナーをリセットし、再びセットする。
+        postsListner.remove()
+        setListner()
+        
     }
     
     
@@ -69,9 +74,13 @@ class ViewController1: UIViewController, UITableViewDelegate, UITableViewDataSou
         setListner()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        postsListner.remove()
+    }
+    
     // イベントリスナーを宣言
     func setListner() {
-        postsListner = postsCollectionRef.addSnapshotListener({ (snapshot, error) in
+        postsListner = postsCollectionRef.whereField(CATEGORY, isEqualTo: selectedCategory).addSnapshotListener({ (snapshot, error) in
             if let err = error {
                 debugPrint("エラー：\(err)")
             } else {
