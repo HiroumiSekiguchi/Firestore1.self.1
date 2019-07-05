@@ -1,10 +1,11 @@
-//
-//  ViewController.swift
-//  Firestore1.self
-//
-//  Created by 関口大海 on 2019/07/04.
-//  Copyright © 2019 関口大海. All rights reserved.
-//
+/*
+以下が修正箇所
+ ・セルのreusable問題を解決
+ ・checkmarkの付け外しをタップで（セル内のデータにその情報を格納するように）
+ ・Dateが投稿取得時のものにならない
+ ・Firebaseからデータを取得する時のやり方について研究
+ ・Imageをボタンにする方法について
+ */
 
 import UIKit
 import Firebase
@@ -92,9 +93,10 @@ class ViewController1: UIViewController, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CellController {
+            cell.configureCell(posty: postArray[indexPath.row])
+            return cell
+        } else { return UITableViewCell() } // セルが存在しなかった場合
         
     }
     

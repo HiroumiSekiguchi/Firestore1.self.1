@@ -38,20 +38,20 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIa-FX-nwp">
-                                                    <rect key="frame" x="166" y="11" width="73" height="18"/>
+                                                    <rect key="frame" x="166" y="11" width="194" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ti-ay-7kQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ti-ay-7kQ">
                                                     <rect key="frame" x="47" y="100" width="24" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hearticon2-1" translatesAutoresizingMaskIntoConstraints="NO" id="lfV-jW-m2b">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hearticon3-1" translatesAutoresizingMaskIntoConstraints="NO" id="lfV-jW-m2b">
                                                     <rect key="frame" x="15" y="98" width="24" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="1" green="0.36019965840000001" blue="0.2124514056" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -65,7 +65,13 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.88523671670000004" blue="0.92964635689999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="i37-mw-4us" id="DtV-9Z-Clc"/>
+                                            <outlet property="likeImage" destination="lfV-jW-m2b" id="PDr-Jx-SxX"/>
+                                            <outlet property="numLikesLabel" destination="1ti-ay-7kQ" id="6gN-Oo-HlT"/>
+                                            <outlet property="timestampLabel" destination="pIa-FX-nwp" id="gP0-Sr-I7J"/>
+                                            <outlet property="titleLabel" destination="GXj-ic-gwW" id="Ufx-9a-3h8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -183,7 +189,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hearticon2-1" width="50" height="50"/>
+        <image name="hearticon3-1" width="50" height="50"/>
         <image name="plusicon1" width="30" height="30"/>
     </resources>
 </document>
