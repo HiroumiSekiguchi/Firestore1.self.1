@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1EE7D14E22CDF4ED00E36AD7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE7D14D22CDF4ED00E36AD7 /* Constants.swift */; };
+		1EE7D15022CEF9AE00E36AD7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE7D14F22CEF9AE00E36AD7 /* Post.swift */; };
 		1EF8729C22CDD002000CCB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF8729B22CDD002000CCB1B /* AppDelegate.swift */; };
 		1EF8729E22CDD002000CCB1B /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF8729D22CDD002000CCB1B /* ViewController1.swift */; };
 		1EF872A122CDD002000CCB1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EF8729F22CDD002000CCB1B /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		1EE7D14D22CDF4ED00E36AD7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1EE7D14F22CEF9AE00E36AD7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		1EF8729822CDD002000CCB1B /* Firestore1.self.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Firestore1.self.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF8729B22CDD002000CCB1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EF8729D22CDD002000CCB1B /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		1EF872B222CDD34D000CCB1B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1EE7D14F22CEF9AE00E36AD7 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				1EF8729C22CDD002000CCB1B /* AppDelegate.swift in Sources */,
 				1EF872AE22CDD323000CCB1B /* ViewController2.swift in Sources */,
 				1EE7D14E22CDF4ED00E36AD7 /* Constants.swift in Sources */,
+				1EE7D15022CEF9AE00E36AD7 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
