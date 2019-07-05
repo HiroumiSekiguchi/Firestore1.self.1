@@ -16,8 +16,9 @@ class Post {
     var numLikes = Int()
     var timestamp = Date()
     
-    init(title: String, content: String, numLikes: Int, timestamp: Date) {
+    init(category: String, title: String, content: String, numLikes: Int, timestamp: Date) {
         
+        self.category = category
         self.title = title
         self.content = content
         self.numLikes = numLikes
