@@ -6,6 +6,8 @@
 //  Copyright © 2019 関口大海. All rights reserved.
 //
 
+// めっちゃ古いバージョンに戻った。ここからもう一本の作業記録を作っていくとすると...？
+
 import Foundation
 
 // 打ち間違えなどのミスに備えて。（StringでFirebase内のkey値を指定すると、Xcodeでサジェストが出ないので。）
