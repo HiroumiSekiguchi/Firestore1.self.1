@@ -6,6 +6,8 @@
 //  Copyright © 2019 関口大海. All rights reserved.
 //
 
+// リモートにpushできなくなった...泣
+
 import UIKit
 
 class CellController: UITableViewCell {
