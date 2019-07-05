@@ -6,6 +6,7 @@
  ・Firebaseからデータを取得する時のやり方について研究
  ・Imageをボタンにする方法について
  ・popular部分の実装＋コードのリファクタリング
+ ・セルの削除機能、編集機能とかもつけたい
  */
 
 import UIKit
@@ -109,23 +110,8 @@ class ViewController1: UIViewController, UITableViewDelegate, UITableViewDataSou
                         // 配列を初期化
                         self.postArray = [Post]()
                         // リファクタリングしないとこう↓
-                        guard let snap = snapshot else { return }
-                        for document in snap.documents {
-                            
-                            let data = document.data()
-                            
-                            let title = data[TITLE] as? String ?? "タイトルなし"
-                            let content = data[CONTENT] as? String ?? "内容なし"
-                            let numLikes = data[NUM_LIKES] as? Int ?? 0
-                            let category = data[CATEGORY] as? String ?? PostCategory.funny.rawValue
-                            let timestamp = data[TIMESTAMP] as? Date ?? Date()
-                            
-                            // 上記に基づいたPostクラスのインスタンスを生成
-                            let newPost = Post(category: category, title: title, content: content, numLikes: numLikes, timestamp: timestamp)
-                            
-                            // 上記を配列に追加
-                            self.postArray.append(newPost)
-                        }
+                        self.postArray = Post.parseData(snapshot: snapshot)
+                        
                         self.tableView.reloadData()
                     }
                 })

@@ -15,7 +15,7 @@ class CellController: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
     @IBOutlet weak var numLikesLabel: UILabel!
-    @IBOutlet weak var likeImage: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +37,13 @@ class CellController: UITableViewCell {
         timestampLabel.text = timestampy
 //        print(timestampy)
     }
+    
+    // ハートボタンをタップした時の処理
+    @IBAction func likeButtonTapped(_ sender: Any) {
+        
+        
+    }
+    
     
     
 }
